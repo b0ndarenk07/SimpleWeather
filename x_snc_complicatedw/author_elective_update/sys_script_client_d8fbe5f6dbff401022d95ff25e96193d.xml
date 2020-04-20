@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>When the unit changes calculate the unit value</description>
+        <field>unit</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Changes Current Unit</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }	
+	
+	var newTemp = null; 
+	var temp = null;
+	var unit = g_form.getValue('unit'); 
+	
+	function CtoF () {
+		temp = g_form.getValue('temp');	
+		newTemp = (temp * 1.8) +32 ; 
+	}
+	
+	function FtoC () {
+		temp = g_form.getValue('temp');	
+		newTemp = (temp -32) * .55556 ; 
+
+	}
+	
+	if (unit == "Farenheit") {	
+	FtoC();
+	}
+	else {
+		CtoF();
+	}
+	g_form.setValue('temp', newTemp);
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 18:24:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d8fbe5f6dbff401022d95ff25e96193d</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Changes Current Unit</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_update_name>sys_script_client_d8fbe5f6dbff401022d95ff25e96193d</sys_update_name>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 23:14:29</sys_updated_on>
+        <table>x_snc_complicatedw_weathersnapshot</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</application>
+        <file_path/>
+        <instance_id>989356b1db3fc8909df22f17d49619c1</instance_id>
+        <instance_name>batman101</instance_name>
+        <name>sys_script_client_d8fbe5f6dbff401022d95ff25e96193d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;When the unit changes calculate the unit value&lt;/description&gt;&lt;field&gt;unit&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Changes Current Unit&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }	
+	
+	var newTemp = null; 
+	var temp = null;
+	var unit = g_form.getValue('unit'); 
+	
+	function CtoF () {
+		temp = g_form.getValue('temp');	
+		newTemp = (temp * 1.8) +32 ; 
+	}
+	
+	function FtoC () {
+		temp = g_form.getValue('temp');	
+		newTemp = (temp -32) * .55556 ; 
+
+	}
+	
+	if (unit == "Farenheit") {	
+	FtoC();
+	}
+	else {
+		CtoF();
+	}
+	g_form.setValue('temp', newTemp);
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;vladislav.bondarenko@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-30 18:24:31&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;d8fbe5f6dbff401022d95ff25e96193d&lt;/sys_id&gt;&lt;sys_mod_count&gt;22&lt;/sys_mod_count&gt;&lt;sys_name&gt;Changes Current Unit&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="ComplicatedWeather"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_d8fbe5f6dbff401022d95ff25e96193d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;vladislav.bondarenko@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-30 23:14:29&lt;/sys_updated_on&gt;&lt;table&gt;x_snc_complicatedw_weathersnapshot&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1725360786</payload_hash>
+        <record_name>Changes Current Unit</record_name>
+        <reverted_from/>
+        <source>353d9b75dbb3001022d95ff25e9619c2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 23:14:29</sys_created_on>
+        <sys_id>cf767ab2dbb3801022d95ff25e961931</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1712db996190000001</sys_recorded_at>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 23:14:29</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>4b767ab23eb38010e859aebd344e4131</update_guid>
+        <update_guid_history>4b767ab23eb38010e859aebd344e4131:1725360786,e6563ab25fb38010083812f27d05b336:-723240580,792636b28eb38010c2182df6e41cfd60:1200646738,2fd5fe7245b38010e33496bdf2cd840a:-940712674,1c357e7203b38010da4f1075157d6178:-239653140,f393fa32c6b380102edbe67fcc3227a6:509901909,6c513afebe7380103cd88d6f512b9dc5:1109520059,0dd03afeb37380108dc845b971933ebb:-262571116,539036be59738010a5958a8e69d6a777:-1155629354,137e26be67738010b0d15e4eef992624:94211581,671c6a3e6e738010920511e17499a125:-1024471942,41aaeefadf7380101d2ef67e10aa1e59:522741401,755aeefade7380104894bb357009dc12:-736211013,93c9e6faa97380108340184139c90497:454654987,0d24a63a1c73801002b0c81fe475da62:352856584,f4d3663a1b738010a574b36f0f8eae73:-441614250,1393a23a74738010999096cb3ad35ae1:-916246636,3273223ac5738010d70c4b093660c4bf:-177935344,4953eaf6b27380101b5aa65ec9250bce:504296932,5ce2aaf6aa738010826e1bcde14cc7fe:1811670493,79d2aaf6277380106bf4fedcac509b39:-352668965,f4816eb6d3738010641b3a8dc31f5f32:-1619300877,eb14797ac0ff40108c10b31c8ffbdb46:-2069006401</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 23:16:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>0f2b33277d77442aa281b162e132fa09</sys_id>
+        <sys_metadata>d8fbe5f6dbff401022d95ff25e96193d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Changes Current Unit</sys_name>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_parent display_value="WeatherSnapshot">0a8e9fb5dbb3001022d95ff25e9619e9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_scope_delete display_value="">625b638811f640c8ab045d96f6873c40</sys_scope_delete>
+        <sys_update_name>sys_script_client_d8fbe5f6dbff401022d95ff25e96193d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_d8fbe5f6dbff401022d95ff25e96193d">cf767ab2dbb3801022d95ff25e961931</sys_update_version>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 23:16:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

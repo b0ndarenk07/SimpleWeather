@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name>ON DEMAND</action_name>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <name>Get Current Weather</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[var gr = new GlideRecord('x_snc_complicatedw_city'); 
+	gr.get(current.sys_id); 
+
+var sw = new SimpleWeather();
+	sw.getWeather(gr);
+
+//js.log(); 
+/*
+gs.addInfoMessage(current);
+*/]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 18:26:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>27bc253adbff401022d95ff25e96193a</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Get Current Weather</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_update_name>sys_ui_action_27bc253adbff401022d95ff25e96193a</sys_update_name>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 21:28:36</sys_updated_on>
+        <table>x_snc_complicatedw_city</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</application>
+        <file_path/>
+        <instance_id>989356b1db3fc8909df22f17d49619c1</instance_id>
+        <instance_name>batman101</instance_name>
+        <name>sys_ui_action_27bc253adbff401022d95ff25e96193a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;ON DEMAND&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;false&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;hint/&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;name&gt;Get Current Weather&lt;/name&gt;&lt;onclick/&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[var gr = new GlideRecord('x_snc_complicatedw_city'); 
+	gr.get(current.sys_id); 
+
+var sw = new SimpleWeather();
+	sw.getWeather(gr);
+
+//js.log(); 
+/*
+gs.addInfoMessage(current);
+*/]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;vladislav.bondarenko@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-30 18:26:13&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;27bc253adbff401022d95ff25e96193a&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;Get Current Weather&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="ComplicatedWeather"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_27bc253adbff401022d95ff25e96193a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;vladislav.bondarenko@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-30 21:28:36&lt;/sys_updated_on&gt;&lt;table&gt;x_snc_complicatedw_city&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-782223159</payload_hash>
+        <record_name>Get Current Weather</record_name>
+        <reverted_from/>
+        <source>353d9b75dbb3001022d95ff25e9619c2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 21:28:36</sys_created_on>
+        <sys_id>c04ed636db73801022d95ff25e96192c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1712d58a5360000001</sys_recorded_at>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 21:28:36</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>4c4ed636967380104b53d2c5292a1a2b</update_guid>
+        <update_guid_history>4c4ed636967380104b53d2c5292a1a2b:-782223159,a4edd236707380109e1589c123623a05:-2024208151,bd6d9ef2e97380103df4eb16fca07ddf:-2035722483,e04d5ef28b738010e962e0279ef192e3:-1755580451,5d08127235738010d1cc7e5cc6f438e5:-1542010656,63c7de32e67380108d660829800c9f7b:2124033521,4e971e3231738010b328ad4e9ff410f3:-1883050620,9894debe1833801043302a4cf4172bb7:542089331,511392bead33801076d43937a325427a:470920571,e484753ea6ff40109183463673f23847:-1440994665</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-30 21:30:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>033a1b3c7861492c802f4863328f9244</sys_id>
+        <sys_metadata>27bc253adbff401022d95ff25e96193a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Current Weather</sys_name>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_parent display_value="City">cc3e9bb5dbb3001022d95ff25e9619e5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_scope_delete display_value="">625b638811f640c8ab045d96f6873c40</sys_scope_delete>
+        <sys_update_name>sys_ui_action_27bc253adbff401022d95ff25e96193a</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_27bc253adbff401022d95ff25e96193a">c04ed636db73801022d95ff25e96192c</sys_update_version>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-30 21:30:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

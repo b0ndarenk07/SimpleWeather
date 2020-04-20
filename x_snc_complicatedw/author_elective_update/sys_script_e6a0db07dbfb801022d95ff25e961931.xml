@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snc_complicatedw_weathersnapshot</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_snc_complicatedw_weathersnapshot">unitVALCHANGES^EQ<item endquery="false" field="unit" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>UpdateTemp</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var gr =  new GlideRecord('x_snc_complicatedw_weathersnapshot'); 
+	gr.get = (current.sys_id);
+	
+	var temp = null;
+	var newTemp = null; 
+	
+	if (gr.unit == "C")
+		{
+			//send temp to F 
+			temp = (gr.temp * 1.8) + 32;
+			newTemp = Math.round(temp);
+			gr.temp = newTemp;
+
+		}
+	else if (gr.unit == "F") {
+			//send temp to C
+			temp = (gr.temp - 32) * .56;
+			newTemp = Math.round(temp);
+			gr.temp = newTemp;
+		
+	}
+	
+				gs.info(gr.unit);
+//	gr.update();
+	
+ /*   
+	var newTemp = null;
+	var prevUnit = g_form.getValue('unit');
+    var temp = g_form.getValue('temperature');
+	
+
+    var toCelcius = function(temp) {
+        newTemp = (temp * 1.8) + 32;
+        g_form.setValue('temperature', Math.round(newTemp));
+
+    };
+    var toFahrenheit = function(temp) {
+        newTemp = (temp - 32) * .56;
+        g_form.setValue('temperature', +(Math.round(newTemp + "e+2") + "e-2"));
+
+    };
+
+    if (prevUnit == "F") {
+        toCelcius(temp);
+        
+    } else {
+        toFahrenheit(temp);
+    }
+*/
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-31 19:47:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e6a0db07dbfb801022d95ff25e961931</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>UpdateTemp</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_update_name>sys_script_e6a0db07dbfb801022d95ff25e961931</sys_update_name>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-31 19:53:25</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=e6a0db07dbfb801022d95ff25e961931"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</application>
+        <file_path/>
+        <instance_id>989356b1db3fc8909df22f17d49619c1</instance_id>
+        <instance_name>batman101</instance_name>
+        <name>sys_script_e6a0db07dbfb801022d95ff25e961931</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_snc_complicatedw_weathersnapshot&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="x_snc_complicatedw_weathersnapshot"&gt;unitVALCHANGES^EQ&lt;item endquery="false" field="unit" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;UpdateTemp&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var gr =  new GlideRecord('x_snc_complicatedw_weathersnapshot'); 
+	gr.get = (current.sys_id);
+	
+	var temp = null;
+	var newTemp = null; 
+	
+	if (gr.unit == "C")
+		{
+			//send temp to F 
+			temp = (gr.temp * 1.8) + 32;
+			newTemp = Math.round(temp);
+			gr.temp = newTemp;
+
+		}
+	else if (gr.unit == "F") {
+			//send temp to C
+			temp = (gr.temp - 32) * .56;
+			newTemp = Math.round(temp);
+			gr.temp = newTemp;
+		
+	}
+	
+				gs.info(gr.unit);
+//	gr.update();
+	
+ /*   
+	var newTemp = null;
+	var prevUnit = g_form.getValue('unit');
+    var temp = g_form.getValue('temperature');
+	
+
+    var toCelcius = function(temp) {
+        newTemp = (temp * 1.8) + 32;
+        g_form.setValue('temperature', Math.round(newTemp));
+
+    };
+    var toFahrenheit = function(temp) {
+        newTemp = (temp - 32) * .56;
+        g_form.setValue('temperature', +(Math.round(newTemp + "e+2") + "e-2"));
+
+    };
+
+    if (prevUnit == "F") {
+        toCelcius(temp);
+        
+    } else {
+        toFahrenheit(temp);
+    }
+*/
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;vladislav.bondarenko@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-03-31 19:47:21&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e6a0db07dbfb801022d95ff25e961931&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;UpdateTemp&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="ComplicatedWeather"&gt;f93d9b75dbb3001022d95ff25e9619bf&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_e6a0db07dbfb801022d95ff25e961931&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;vladislav.bondarenko@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-03-31 19:53:25&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e6a0db07dbfb801022d95ff25e961931"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1077262282</payload_hash>
+        <record_name>UpdateTemp</record_name>
+        <reverted_from/>
+        <source>353d9b75dbb3001022d95ff25e9619c2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-31 19:53:25</sys_created_on>
+        <sys_id>af021f47dbfb801022d95ff25e9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1713227dda70000001</sys_recorded_at>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-31 19:53:25</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>a7021f47aefb8010a6ff04d40c5ff5c3</update_guid>
+        <update_guid_history>a7021f47aefb8010a6ff04d40c5ff5c3:-1077262282,c1b197476bfb8010612c11c54fd608f5:174169085,d871d347affb801041bb6ebaaf275383:-1462445634,eaa0db07affb80102fbc55c3e04b1734:-192866700</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>vladislav.bondarenko@snc</sys_created_by>
+        <sys_created_on>2020-03-31 19:55:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>1d144356d5e04e00bfeba989e16dc190</sys_id>
+        <sys_metadata>e6a0db07dbfb801022d95ff25e961931</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UpdateTemp</sys_name>
+        <sys_package display_value="ComplicatedWeather" source="x_snc_complicatedw">f93d9b75dbb3001022d95ff25e9619bf</sys_package>
+        <sys_parent display_value="WeatherSnapshot">0a8e9fb5dbb3001022d95ff25e9619e9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="ComplicatedWeather">f93d9b75dbb3001022d95ff25e9619bf</sys_scope>
+        <sys_scope_delete display_value="">625b638811f640c8ab045d96f6873c40</sys_scope_delete>
+        <sys_update_name>sys_script_e6a0db07dbfb801022d95ff25e961931</sys_update_name>
+        <sys_update_version display_value="sys_script_e6a0db07dbfb801022d95ff25e961931">af021f47dbfb801022d95ff25e9619c3</sys_update_version>
+        <sys_updated_by>vladislav.bondarenko@snc</sys_updated_by>
+        <sys_updated_on>2020-03-31 19:55:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

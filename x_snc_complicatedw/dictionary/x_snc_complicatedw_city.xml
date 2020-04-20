@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="City" max_length="40" name="x_snc_complicatedw_city" sizeclass="6" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="524901" display="true" label="City" max_length="40" name="city" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="London" value="2643741"/>
+                <element inactive_on_update="false" label="Los Angeles" value="5368381"/>
+                <element inactive_on_update="false" label="Madrid" value="6359304"/>
+                <element inactive_on_update="false" label="Moscow" value="524901"/>
+                <element inactive_on_update="false" label="New York" value="5128594"/>
+                <element inactive_on_update="false" label="San Diego" value="5391832"/>
+            </choice>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="WeatherSnapshot" max_length="40" name="x_snc_complicatedw_weathersnapshot" sizeclass="2975" type="collection">
+        <element attributes="encode_utf8=false" label="City" max_length="32" name="city" reference="x_snc_complicatedw_city" type="reference"/>
+        <element label="Humidity" max_length="40" name="humidity" type="integer"/>
+        <element label="Temperature" max_length="40" name="temperature" type="float"/>
+        <element choice="3" default="F" label="Unit" max_length="40" name="unit" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Celcius" value="C"/>
+                <element inactive_on_update="false" label="Farenheit" value="F"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" dependent="city" dependent_on_field="city" label="City Ref" max_length="32" name="u_city_ref" reference="x_snc_complicatedw_city" type="reference" use_dependent_field="true"/>
+        <index name="index">
+            <element name="city"/>
+        </index>
+        <index name="index2">
+            <element name="u_city_ref"/>
+        </index>
+    </element>
+</database>
